@@ -1,0 +1,42 @@
+name: build apple silicon joplin
+on: push
+
+jobs:
+  build:
+    runs-on: macos-latest
+     steps:
+      - name: Install macOS dependencies
+        run: |
+          brew update
+          brew install gettext
+          brew install translate-toolkit
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/checkout@v3
+        with:
+          repository: 'laurent22/joplin'
+          ref: ${{ env.GITHUB_REF_NAME }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Patch with MAC OS X universal app
+        run: |
+          git apply ../apple-silicon-joplin-builder/silicon-mac.patch
+
+      - name: Install Yarn
+        run: |
+          # https://yarnpkg.com/getting-started/install
+          corepack enable
+
+      - name: Build img
+        run: |
+          USE_HARD_LINKS=false yarn run dist --publish=never
+
+      - name: Release artifact
+        uses: softprops/action-gh-release@v1
+        with:
+          files: packages/app-desktop/build-mac/*.dmg
+          tag_name: ${{ env.GITHUB_REF_NAME }}
