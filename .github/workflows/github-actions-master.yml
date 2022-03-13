@@ -24,16 +24,15 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Patch with MAC OS X universal app
+      - name: Patch build result to a silicon only app
         run: |
           git apply ./builder/silicon-only.patch
 
       - name: Install Yarn
         run: |
           # https://yarnpkg.com/getting-started/install
-          npm install
           corepack enable
-
+          yarn install
 
       - name: Build img
         run: |
