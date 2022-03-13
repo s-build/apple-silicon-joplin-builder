@@ -12,11 +12,13 @@ jobs:
           brew install translate-toolkit
 
       - uses: actions/checkout@v3
-
-      - uses: actions/checkout@v3
         with:
           repository: 'laurent22/joplin'
           ref: ${{ env.GITHUB_REF_NAME }}
+
+      - uses: actions/checkout@v3
+        with:
+          path: builder
 
       - uses: actions/setup-node@v2
         with:
@@ -24,7 +26,7 @@ jobs:
 
       - name: Patch with MAC OS X universal app
         run: |
-          git apply ../apple-silicon-joplin-builder/silicon-mac.patch
+          git apply ./builder/silicon-mac.patch
 
       - name: Install Yarn
         run: |
