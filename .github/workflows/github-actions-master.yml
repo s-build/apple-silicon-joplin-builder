@@ -26,8 +26,7 @@ jobs:
 
       - name: Patch with MAC OS X universal app
         run: |
-          ls -ahl ./builder/apple-silicon-joplin-builder
-          git apply ./builder/apple-silicon-joplin-builder/silicon-mac.patch
+          git apply ../builder/apple-silicon-joplin-builder/silicon-mac.patch
 
       - name: Install Yarn
         run: |
@@ -36,7 +35,8 @@ jobs:
 
       - name: Build img
         run: |
-          USE_HARD_LINKS=false yarn run dist --publish=never
+          # pnpm install
+          USE_HARD_LINKS=false yarn run dist
 
       - name: Release artifact
         uses: softprops/action-gh-release@v1
