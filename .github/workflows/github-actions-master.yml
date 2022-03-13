@@ -35,7 +35,7 @@ jobs:
 
       - name: Build img
         run: |
-          npm install
+          pnpm install
           USE_HARD_LINKS=false yarn run dist
 
       - name: Release artifact
