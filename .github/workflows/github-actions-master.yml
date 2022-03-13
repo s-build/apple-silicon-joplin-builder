@@ -28,14 +28,19 @@ jobs:
         run: |
           git apply ./builder/silicon-only.patch
 
+      - uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32
+          run_install: true
+
       - name: Install Yarn
         run: |
           # https://yarnpkg.com/getting-started/install
           corepack enable
 
+
       - name: Build img
         run: |
-          pnpm install
           USE_HARD_LINKS=false yarn run dist
 
       - name: Release artifact
