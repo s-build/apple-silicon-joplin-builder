@@ -26,7 +26,9 @@ jobs:
 
       - name: Patch with MAC OS X universal app
         run: |
-          git apply ../builder/apple-silicon-joplin-builder/silicon-mac.patch
+          ls ./builder
+          ls ./builder/apple-silicon-joplin-builder
+          # git apply ../builder/apple-silicon-joplin-builder/silicon-mac.patch
 
       - name: Install Yarn
         run: |
