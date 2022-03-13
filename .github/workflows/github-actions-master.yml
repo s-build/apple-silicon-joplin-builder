@@ -36,8 +36,8 @@ jobs:
 
       - name: Build img
         run: |
-          cd packages/app-desktop
           USE_HARD_LINKS=false yarn run dist
+          working-directory: packages/app-desktop
 
       - name: Release artifact
         uses: softprops/action-gh-release@v1
