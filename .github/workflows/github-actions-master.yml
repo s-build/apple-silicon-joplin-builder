@@ -36,11 +36,11 @@ jobs:
 
       - name: Build img
         run: |
-          USE_HARD_LINKS=false yarn run dist
+          USE_HARD_LINKS=false yarn run dist --publish=never
           working-directory: packages/app-desktop
 
       - name: Release artifact
         uses: softprops/action-gh-release@v1
         with:
-          files: packages/app-desktop/build-mac/*.dmg
+          files: packages/app-desktop/dist/*.dmg
           tag_name: ${{ env.GITHUB_REF_NAME }}
