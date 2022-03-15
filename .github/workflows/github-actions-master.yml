@@ -27,6 +27,7 @@ jobs:
       - name: Patch build result to a silicon only app
         run: |
           git apply ./builder/silicon-only.patch
+          git apply ./builder/yarn-dist-force-arm64.patch
 
       - name: Install Yarn
         run: |

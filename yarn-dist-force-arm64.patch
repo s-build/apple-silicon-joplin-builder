@@ -1,0 +1,13 @@
+diff --git a/packages/app-desktop/tools/electronRebuild.js b/packages/app-desktop/tools/electronRebuild.js
+index 8af9c69e2..de3e65ac7 100644
+--- a/packages/app-desktop/tools/electronRebuild.js
++++ b/packages/app-desktop/tools/electronRebuild.js
+@@ -47,7 +47,7 @@ async function main() {
+ 		console.info(await execCommand(['yarn', 'run', 'electron-rebuild', forceAbiArgs, '--arch ia32'].join(' ')));
+ 		console.info(await execCommand(['yarn', 'run', 'electron-rebuild', forceAbiArgs, '--arch x64'].join(' ')));
+ 	} else {
+-		console.info(await execCommand(['yarn', 'run', 'electron-rebuild', forceAbiArgs].join(' ')));
++		console.info(await execCommand(['yarn', 'run', 'electron-rebuild', forceAbiArgs, '--arch arm64'].join(' ')));
+ 	}
+ }
+ 
