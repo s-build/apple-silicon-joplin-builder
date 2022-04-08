@@ -33,6 +33,7 @@ jobs:
         run: |
           git apply ./builder/silicon-only.patch
           git apply ./builder/yarn-dist-force-arm64.patch
+          git apply ./builder/to-vscode-sqlite3.patch
 
       - name: Install Yarn
         run: |
