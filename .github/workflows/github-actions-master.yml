@@ -5,6 +5,11 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
+      - name: Get the tag_name
+        id: get_tag_name
+        run: |
+          echo "::set-output name=tag_name::${GITHUB_REF_NAME}-$(date +'%Y-%m-%d')-${GITHUB_RUN_ID}"
+
       - name: Install macOS dependencies
         run: |
           brew install gettext
@@ -44,4 +49,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: packages/app-desktop/dist/*.dmg
-          tag_name: ${{ github.ref_name }}
+          tag_name: ${{ steps.get_tag_name.outputs.tag_name }}
