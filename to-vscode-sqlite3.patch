@@ -1,5 +1,18 @@
+diff --git a/packages/app-cli/package.json b/packages/app-cli/package.json
+index 144c031cc..947f5af95 100644
+--- a/packages/app-cli/package.json
++++ b/packages/app-cli/package.json
+@@ -56,7 +56,7 @@
+     "server-destroy": "^1.0.1",
+     "sharp": "^0.26.2",
+     "sprintf-js": "^1.1.2",
+-    "sqlite3": "^5.0.2",
++    "@vscode/sqlite3": "^5.0.8",
+     "string-padding": "^1.0.2",
+     "strip-ansi": "^4.0.0",
+     "tcp-port-used": "^1.0.2",
 diff --git a/packages/app-desktop/package.json b/packages/app-desktop/package.json
-index 015181859..e0e2259c2 100644
+index 015181859..29269359f 100644
 --- a/packages/app-desktop/package.json
 +++ b/packages/app-desktop/package.json
 @@ -171,7 +171,7 @@
@@ -7,12 +20,12 @@ index 015181859..e0e2259c2 100644
      "roboto-fontface": "^0.10.0",
      "smalltalk": "^2.5.1",
 -    "sqlite3": "^5.0.2",
-+    "vscode/sqlite3": "^5.0.2",
++    "@vscode/sqlite3": "^5.0.8",
      "styled-components": "5.1.1",
      "styled-system": "5.1.5",
      "taboverride": "^4.0.3",
 diff --git a/packages/lib/package.json b/packages/lib/package.json
-index 962d8b5ea..2a5b3c737 100644
+index 962d8b5ea..18cd21376 100644
 --- a/packages/lib/package.json
 +++ b/packages/lib/package.json
 @@ -80,7 +80,7 @@
@@ -20,12 +33,25 @@ index 962d8b5ea..2a5b3c737 100644
      "server-destroy": "^1.0.1",
      "sprintf-js": "^1.1.2",
 -    "sqlite3": "^5.0.2",
-+    "vscode/sqlite3": "^5.0.2",
++    "@vscode/sqlite3": "^5.0.8",
      "string-padding": "^1.0.2",
      "string-to-stream": "^1.1.0",
      "tar": "^4.4.10",
+diff --git a/packages/server/package.json b/packages/server/package.json
+index df18cf5a8..11dd2694e 100644
+--- a/packages/server/package.json
++++ b/packages/server/package.json
+@@ -51,7 +51,7 @@
+     "query-string": "^6.8.3",
+     "rate-limiter-flexible": "^2.2.4",
+     "raw-body": "^2.4.1",
+-    "sqlite3": "^4.1.0",
++    "@vscode/sqlite3": "^5.0.8",
+     "stripe": "^8.150.0",
+     "uuid": "^8.3.2",
+     "yargs": "^17.2.1",
 diff --git a/packages/tools/package.json b/packages/tools/package.json
-index c2c8f2240..ad521aa86 100644
+index c2c8f2240..07e1fb566 100644
 --- a/packages/tools/package.json
 +++ b/packages/tools/package.json
 @@ -50,7 +50,7 @@
@@ -33,7 +59,7 @@ index c2c8f2240..ad521aa86 100644
      "jest": "^26.6.3",
      "sass": "^1.39.2",
 -    "sqlite3": "^5.0.0",
-+    "vscode/sqlite3": "^5.0.2",
++    "@vscode/sqlite3": "^5.0.8",
      "typescript": "^4.1.3"
    },
    "gitHead": "eb4b0e64eab40a51b0895d3a40a9d8c3cb7b1b14"
