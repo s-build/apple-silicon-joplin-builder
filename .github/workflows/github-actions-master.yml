@@ -39,7 +39,8 @@ jobs:
         run: |
           # https://yarnpkg.com/getting-started/install
           corepack enable
-          yarn install
+          yarn --version
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
 
       - name: Build img
         run: |
